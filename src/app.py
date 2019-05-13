@@ -80,7 +80,7 @@ def ui_response(results, image_src):
 async def upload(request):
     data = await request.form()
     bytes = await (data["file"].read())
-    return predict_image_from_bytesas_json(bytes)
+    return predict_image_from_bytes_as_json(bytes)
 
 @app.route("/upload", methods=["POST"])
 async def upload(request):
@@ -115,8 +115,6 @@ def predict_image_from_bytes_as_json(bytes):
 def form(request):
     return layout_response(
         """
-<h1 class="ui center aligned header">Wild boar or deer?</h1>
-
 <h2 class="ui center aligned header">Upload a photo taken in forest</h2>
 
 <div class="ui container">
